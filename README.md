@@ -6,7 +6,7 @@ Usage
 
 How to:
 
-      fridump [-h] [-o dir] [-u] [-v] [-r] [-s] [--max-size bytes] process
+      fridump [-h] [-o dir] [-u] [-H ip] [-v] [-r] [-s] [--max-size bytes] process
 
 The following are the main flags that can be used with fridump:
 
@@ -17,6 +17,7 @@ The following are the main flags that can be used with fridump:
       -h, --help         show this help message and exit
       -o dir, --out dir  provide full output directory path. (def: 'dump')
       -u, --usb          device connected over usb
+      -H, --host         device connected over tcp
       -v, --verbose      verbose
       -r, --read-only    dump read-only parts of memory. More data, more errors
       -s, --strings      run strings on all dump files. Saved in output dir.
@@ -34,6 +35,7 @@ Examples:
       fridump -u Safari   -   Dump the memory of an iOS device associated with the Safari app
       fridump -u -s com.example.WebApp   -  Dump the memory of an Android device and run strings on all dump files
       fridump -r -o [full_path]  -  Dump the memory of a local application and save it to the specified directory
+      fridump -H [ip] -o [full_path] [pid]
       
 More examples can be found [here](http://pentestcorner.com/introduction-to-fridump/)
 
